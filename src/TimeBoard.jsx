@@ -30,7 +30,6 @@ function showHighScores() {
     )
     .join('');
 
-  calculateBestTime();
 };
 
 function calculateBestTime() {
@@ -54,11 +53,11 @@ function calculateBestTime() {
     temp = time.split('.', 1);
     temp = temp[0];
     temp = temp.slice(0,-1);
-    newTime += parseInt(temp);; 
+    newTime += parseInt(temp);
     time.replace((newTime - minutes).toString() + ".",'')
 
     //Miliseconds
-    newTime += parseInt(time); / 100; 
+    newTime += parseInt(time) / 100; 
     
     timesSeconds.push(newTime);
   }
