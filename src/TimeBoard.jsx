@@ -42,7 +42,7 @@ function calculateBestTime() {
     let newTime = 0;
 
     //Minutes
-    if (time.contains(':')) {
+    if (time.includes(':')) {
       minutes = time.split(':', 1)[0].slice(0,-1).parseInt() * 60;
       newTime += minutes
       time.replace(minutes.toString() + ":",'')
