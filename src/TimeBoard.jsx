@@ -46,8 +46,7 @@ function calculateBestTime() {
       temp = time.split(':', 1);
       temp = temp[0];
       temp = temp.slice(0,-1);
-      temp = temp.parseInt() * 60;
-      newTime += temp;
+      newTime += parseInt(temp) * 60;
       time.replace(minutes.toString() + ":",'')
     }
 
@@ -55,8 +54,7 @@ function calculateBestTime() {
     temp = time.split('.', 1);
     temp = temp[0];
     temp = temp.slice(0,-1);
-    temp = temp.parseInt();
-    newTime += temp;  
+    newTime += parseInt(temp);; 
     time.replace((newTime - minutes).toString() + ".",'')
 
     //Miliseconds
