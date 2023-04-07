@@ -39,16 +39,24 @@ function calculateBestTime() {
   for (let time in highScores) {
     let minutes = 0;
     let newTime = 0;
+    let temp;
 
     //Minutes
     if (time.includes(":")) {
-      minutes = (((time.split(':', 1))[0].slice(0,-1).parseInt()) * 60);
-      newTime += minutes
+      temp = time.split(':', 1);
+      temp = temp[0];
+      temp = temp.slice(0,-1);
+      temp = temp.parseInt() * 60;
+      newTime += temp;
       time.replace(minutes.toString() + ":",'')
     }
 
     //Seconds
-    newTime += ((time.split('.', 1))[0].slice(0,-1).parseInt());    
+    temp = time.split('.', 1);
+    temp = temp[0];
+    temp = temp.slice(0,-1);
+    temp = temp.parseInt();
+    newTime += temp;  
     time.replace((newTime - minutes).toString() + ".",'')
 
     //Miliseconds
