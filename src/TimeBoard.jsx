@@ -58,7 +58,7 @@ function calculateBestTime() {
     time.replace((newTime - minutes).toString() + ".",'')
 
     //Miliseconds
-    newTime += time.parseInt() / 100; 
+    newTime += parseInt(time); / 100; 
     
     timesSeconds.push(newTime);
   }
