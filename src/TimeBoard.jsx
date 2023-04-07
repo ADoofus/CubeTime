@@ -36,13 +36,12 @@ function showHighScores() {
 function calculateBestTime() {
   const highScores = JSON.parse(localStorage.getItem('Times')) ?? [];
   let timesSeconds = [];
-  for (i in highScores) {
-    let time = highScores[i]
+  for (let time in highScores) {
     let minutes = 0;
     let newTime = 0;
 
     //Minutes
-    if (time.length > 4) {
+    if (time.includes(":")) {
       minutes = time.split(':', 1)[0].slice(0,-1).parseInt() * 60;
       newTime += minutes
       time.replace(minutes.toString() + ":",'')
@@ -60,8 +59,7 @@ function calculateBestTime() {
 
   let timeSecond;
   let minVal = timesSeconds[0]
-  for (i in timesSeconds) {
-    let timeSecond = timesSeconds[i];
+  for (let timeSecond in timesSeconds) {
     if (timeSecond < minVal) {
       minVal = timeSecond;
     }
